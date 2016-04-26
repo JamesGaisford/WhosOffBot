@@ -23,10 +23,15 @@ namespace WhoOffBot
             if (message.Type == "Message")
             {
                 // calculate something for us to return
-                int length = (message.Text ?? string.Empty).Length;
+                var requestingUserId = message.From.Id;
+                var whosOff = new Logic.WhosOff();
+                //Map message.user to whos off user.
+                //Make a call to Staff_Details & get 
+                whosOff.GetStaffId(message.From.Id);
 
+                int daysHolidayLeft = whosOff.DaysOffLeftThisYear(22);
                 // return our reply to the user
-                return message.CreateReplyMessage($"You sent {length} characters");
+                return message.CreateReplyMessage($"You have {daysHolidayLeft} holiday days left, ha ha ha.");
             }
             else
             {

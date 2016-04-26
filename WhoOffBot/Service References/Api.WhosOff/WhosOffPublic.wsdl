@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://publicapi.whosoff.com/WhosOffPublic.asmx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://publicapi.whosoff.com/WhosOffPublic.asmx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WhosOff Public API</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://publicapi.whosoff.com/WhosOffPublic.asmx/">
+      <s:element name="WhosOff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Leave_Type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhosOffResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhosOffByCompanyResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhosOffByStaffResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department_Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhosOffByDepartmentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByLeaveType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Leave_Type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhosOffByLeaveTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhosOffByLeaveTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffDetailsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffDetailsMinimum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffDetailsMinimumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffDetailsMinimumResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Staff_x0020_Details_x0020_By_x0020_StaffID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Staff_x0020_Details_x0020_By_x0020_StaffIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_x0020_Details_x0020_By_x0020_StaffIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffDetailsByStaffID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department_Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffDetailsByStaffIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffDetailsByStaffIDResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company_Year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LEAVE_TYPES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LEAVE_TYPESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LEAVE_TYPESResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DEPARTMENT_NAMES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DEPARTMENT_NAMESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DEPARTMENT_NAMESResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WhosOffSoapIn">
+    <wsdl:part name="parameters" element="tns:WhosOff" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffSoapOut">
+    <wsdl:part name="parameters" element="tns:WhosOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:WhosOffByCompany" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:WhosOffByCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:WhosOffByStaff" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:WhosOffByStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:WhosOffByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:WhosOffByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByLeaveTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:WhosOffByLeaveType" />
+  </wsdl:message>
+  <wsdl:message name="WhosOffByLeaveTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:WhosOffByLeaveTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="StaffDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:StaffDetails" />
+  </wsdl:message>
+  <wsdl:message name="StaffDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:StaffDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="StaffDetailsMinimumSoapIn">
+    <wsdl:part name="parameters" element="tns:StaffDetailsMinimum" />
+  </wsdl:message>
+  <wsdl:message name="StaffDetailsMinimumSoapOut">
+    <wsdl:part name="parameters" element="tns:StaffDetailsMinimumResponse" />
+  </wsdl:message>
+  <wsdl:message name="Staff_x0020_Details_x0020_By_x0020_StaffIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Staff_x0020_Details_x0020_By_x0020_StaffID" />
+  </wsdl:message>
+  <wsdl:message name="Staff_x0020_Details_x0020_By_x0020_StaffIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Staff_x0020_Details_x0020_By_x0020_StaffIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearSoapIn">
+    <wsdl:part name="parameters" element="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year" />
+  </wsdl:message>
+  <wsdl:message name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearSoapOut">
+    <wsdl:part name="parameters" element="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearResponse" />
+  </wsdl:message>
+  <wsdl:message name="StaffDetailsByStaffIDSoapIn">
+    <wsdl:part name="parameters" element="tns:StaffDetailsByStaffID" />
+  </wsdl:message>
+  <wsdl:message name="StaffDetailsByStaffIDSoapOut">
+    <wsdl:part name="parameters" element="tns:StaffDetailsByStaffIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearSoapIn">
+    <wsdl:part name="parameters" element="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year" />
+  </wsdl:message>
+  <wsdl:message name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearSoapOut">
+    <wsdl:part name="parameters" element="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearResponse" />
+  </wsdl:message>
+  <wsdl:message name="LEAVE_TYPESSoapIn">
+    <wsdl:part name="parameters" element="tns:LEAVE_TYPES" />
+  </wsdl:message>
+  <wsdl:message name="LEAVE_TYPESSoapOut">
+    <wsdl:part name="parameters" element="tns:LEAVE_TYPESResponse" />
+  </wsdl:message>
+  <wsdl:message name="DEPARTMENT_NAMESSoapIn">
+    <wsdl:part name="parameters" element="tns:DEPARTMENT_NAMES" />
+  </wsdl:message>
+  <wsdl:message name="DEPARTMENT_NAMESSoapOut">
+    <wsdl:part name="parameters" element="tns:DEPARTMENT_NAMESResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WhosOffPublicSoap">
+    <wsdl:operation name="WHOSOFF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns list of staff members leave for required period&lt;/p&gt;&lt;p&gt;Parameters :APIKEY (string), Start_Date (date format) DD/MMM/YYYY, End_Date (date format) DD/MMM/YYYY, Staff_ID (string) email address or staff code, Department_Name (string) , Leave_Type (string) &lt;/p&gt; </wsdl:documentation>
+      <wsdl:input name="WhosOff" message="tns:WhosOffSoapIn" />
+      <wsdl:output name="WhosOff" message="tns:WhosOffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns list of staff members leave for required period&lt;/p&gt;&lt;p&gt;Parameters :APIKEY (string), Start_Date (date format) DD/MMM/YYYY, End_Date (date format) DD/MMM/YYYY, Staff_ID (string) email address or staff code, Department_Name (string) , Leave_Type (string) &lt;/p&gt; </wsdl:documentation>
+      <wsdl:input name="WhosOffByCompany" message="tns:WhosOffByCompanySoapIn" />
+      <wsdl:output name="WhosOffByCompany" message="tns:WhosOffByCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_STAFFID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns list of staff members leave for required period&lt;/p&gt;&lt;p&gt;Parameters :APIKEY (string), Start_Date (date format) DD/MMM/YYYY, End_Date (date format) DD/MMM/YYYY, Staff_ID (string) email address or staff code&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input name="WhosOffByStaff" message="tns:WhosOffByStaffSoapIn" />
+      <wsdl:output name="WhosOffByStaff" message="tns:WhosOffByStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_DEPARTMENT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns list of staff members leave for required period&lt;/p&gt;&lt;p&gt;Parameters :APIKEY (string), Start_Date (date format) DD/MMM/YYYY, End_Date (date format) DD/MMM/YYYY, Department_Name (string)&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input name="WhosOffByDepartment" message="tns:WhosOffByDepartmentSoapIn" />
+      <wsdl:output name="WhosOffByDepartment" message="tns:WhosOffByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_LEAVE_TYPE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns list of staff members leave for required period&lt;/p&gt;&lt;p&gt;Parameters : APIKEY (string), Start_Date (date format) DD/MMM/YYYY, End_Date (date format) DD/MMM/YYYY,Leave_Type (string) &lt;/p&gt; </wsdl:documentation>
+      <wsdl:input name="WhosOffByLeaveType" message="tns:WhosOffByLeaveTypeSoapIn" />
+      <wsdl:output name="WhosOffByLeaveType" message="tns:WhosOffByLeaveTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns List of Staff by Company&lt;/p&gt;&lt;p&gt;Parameters : API KEY (string), Department_Name (string), Staff_ID (string), Leave_Type (string), Company_Year (date format) DD/MMM/YYYY </wsdl:documentation>
+      <wsdl:input name="StaffDetails" message="tns:StaffDetailsSoapIn" />
+      <wsdl:output name="StaffDetails" message="tns:StaffDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns List of Staff by Company&lt;/p&gt;&lt;p&gt;Parameters : API KEY (string), Department_Name (string), Staff_ID (string), Leave_Type (string), Company_Year (date format) DD/MMM/YYYY </wsdl:documentation>
+      <wsdl:input name="StaffDetailsMinimum" message="tns:StaffDetailsMinimumSoapIn" />
+      <wsdl:output name="StaffDetailsMinimum" message="tns:StaffDetailsMinimumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_STAFFID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns Staff Members Details&lt;/p&gt;&lt;p&gt;Parameters : APIKEY (string) , Staff_ID (string) email or staff code of staff member &lt;/p&gt;</wsdl:documentation>
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID" message="tns:Staff_x0020_Details_x0020_By_x0020_StaffIDSoapIn" />
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID" message="tns:Staff_x0020_Details_x0020_By_x0020_StaffIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_STAFFID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns Staff Members Details including Leave balances&lt;/p&gt;&lt;p&gt;Parameters : APIKEY (string) , Staff_ID (string) email or staff code of staff member, Company_Year (integer)= 1:This Year, 2:Next Year &lt;/p&gt;</wsdl:documentation>
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year" message="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearSoapIn" />
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year" message="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_YearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_DEPARTMENT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns List of Staff in a Department&lt;/p&gt;&lt;p&gt;Parameters : APIKEY (string), Department_Name (string)&lt;/P&gt; </wsdl:documentation>
+      <wsdl:input name="StaffDetailsByStaffID" message="tns:StaffDetailsByStaffIDSoapIn" />
+      <wsdl:output name="StaffDetailsByStaffID" message="tns:StaffDetailsByStaffIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_DEPARTMENT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns List of Staff in a Department&lt;/p&gt;&lt;p&gt;Parameters : APIKEY (string), Department_Name (string), Company_Year (integer)= 1:This Year, 2:Next Year &lt;/p&gt; </wsdl:documentation>
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year" message="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearSoapIn" />
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year" message="tns:Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_YearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LEAVE_TYPES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns Company Leave types&lt;/p&gt;&lt;p&gt;Parameters: APIKEY (string)&lt;/p&gt;</wsdl:documentation>
+      <wsdl:input message="tns:LEAVE_TYPESSoapIn" />
+      <wsdl:output message="tns:LEAVE_TYPESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DEPARTMENT_NAMES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;p&gt;Returns Company Department Names&lt;/p&gt;&lt;p&gt;Parameters: APIKEY (string)&lt;/p&gt;</wsdl:documentation>
+      <wsdl:input message="tns:DEPARTMENT_NAMESSoapIn" />
+      <wsdl:output message="tns:DEPARTMENT_NAMESSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WhosOffPublicSoap" type="tns:WhosOffPublicSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WHOSOFF">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOff" style="document" />
+      <wsdl:input name="WhosOff">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOff">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByCompany" style="document" />
+      <wsdl:input name="WhosOffByCompany">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByCompany">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_STAFFID">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByStaff" style="document" />
+      <wsdl:input name="WhosOffByStaff">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByStaff">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_DEPARTMENT">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByDepartment" style="document" />
+      <wsdl:input name="WhosOffByDepartment">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByDepartment">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_LEAVE_TYPE">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByLeaveType" style="document" />
+      <wsdl:input name="WhosOffByLeaveType">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByLeaveType">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/StaffDetails" style="document" />
+      <wsdl:input name="StaffDetails">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StaffDetails">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/StaffDetailsMinimum" style="document" />
+      <wsdl:input name="StaffDetailsMinimum">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StaffDetailsMinimum">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_STAFFID">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/Staff Details By StaffID" style="document" />
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_STAFFID">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/Staff Details By StaffID inclucing Company Year" style="document" />
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_DEPARTMENT">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/StaffDetailsByStaffID" style="document" />
+      <wsdl:input name="StaffDetailsByStaffID">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StaffDetailsByStaffID">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_DEPARTMENT">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/Staff Details By StaffID including Company Year" style="document" />
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LEAVE_TYPES">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/LEAVE_TYPES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DEPARTMENT_NAMES">
+      <soap:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/DEPARTMENT_NAMES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WhosOffPublicSoap12" type="tns:WhosOffPublicSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WHOSOFF">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOff" style="document" />
+      <wsdl:input name="WhosOff">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOff">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByCompany" style="document" />
+      <wsdl:input name="WhosOffByCompany">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByCompany">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_STAFFID">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByStaff" style="document" />
+      <wsdl:input name="WhosOffByStaff">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByStaff">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_DEPARTMENT">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByDepartment" style="document" />
+      <wsdl:input name="WhosOffByDepartment">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByDepartment">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WHOSOFF_BY_LEAVE_TYPE">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/WhosOffByLeaveType" style="document" />
+      <wsdl:input name="WhosOffByLeaveType">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="WhosOffByLeaveType">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/StaffDetails" style="document" />
+      <wsdl:input name="StaffDetails">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StaffDetails">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/StaffDetailsMinimum" style="document" />
+      <wsdl:input name="StaffDetailsMinimum">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StaffDetailsMinimum">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_STAFFID">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/Staff Details By StaffID" style="document" />
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_STAFFID">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/Staff Details By StaffID inclucing Company Year" style="document" />
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_inclucing_x0020_Company_x0020_Year">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_DEPARTMENT">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/StaffDetailsByStaffID" style="document" />
+      <wsdl:input name="StaffDetailsByStaffID">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StaffDetailsByStaffID">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STAFF_DETAILS_BY_DEPARTMENT">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/Staff Details By StaffID including Company Year" style="document" />
+      <wsdl:input name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Staff_x0020_Details_x0020_By_x0020_StaffID_x0020_including_x0020_Company_x0020_Year">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LEAVE_TYPES">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/LEAVE_TYPES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DEPARTMENT_NAMES">
+      <soap12:operation soapAction="http://publicapi.whosoff.com/WhosOffPublic.asmx/DEPARTMENT_NAMES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WhosOffPublic">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WhosOff Public API</wsdl:documentation>
+    <wsdl:port name="WhosOffPublicSoap" binding="tns:WhosOffPublicSoap">
+      <soap:address location="https://publicapi.whosoff.com/WhosOffPublic.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WhosOffPublicSoap12" binding="tns:WhosOffPublicSoap12">
+      <soap12:address location="https://publicapi.whosoff.com/WhosOffPublic.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
