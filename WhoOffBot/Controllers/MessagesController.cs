@@ -25,11 +25,8 @@ namespace WhoOffBot
                 // calculate something for us to return
                 var requestingUserId = message.From.Id;
                 var whosOff = new Logic.WhosOff();
-                //Map message.user to whos off user.
-                //Make a call to Staff_Details & get 
-                whosOff.GetStaffId(message.From.Id);
-
-                int daysHolidayLeft = whosOff.DaysOffLeftThisYear(22);
+                var staffId = whosOff.GetStaffId("james.gaisford@mubaloo.com");
+                int daysHolidayLeft = whosOff.DaysOffLeftThisYear("james.gaisford@mubaloo.com");
                 // return our reply to the user
                 return message.CreateReplyMessage($"You have {daysHolidayLeft} holiday days left, ha ha ha.");
             }
